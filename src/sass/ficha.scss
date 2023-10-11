@@ -7,3 +7,20 @@
 	height: 100px;
 	background-color: yellow;
 }
+
+.card {
+	border: 1px solid black;
+	margin-bottom: 2rem;
+	max-width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+	min-height: 400px;
+	cursor: pointer;
+}
+
+.card-image{
+	max-width: 170px;
+	margin: 0 auto;
+	padding: 20px 5px;
+	width: 100%;
+}

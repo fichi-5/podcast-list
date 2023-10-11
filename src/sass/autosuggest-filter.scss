@@ -1,0 +1,49 @@
+@import 'variables';
+
+.bar-autosuggest{
+	margin: 20px auto;
+	text-align: center;
+	p{
+		display: inline-block;
+		margin-right: 20px;
+	}
+}
+.react-autosuggest__container{
+	display: inline-block;
+	.react-autosuggest__input{
+		border-radius: 15px;
+		border: 1px solid black;
+		padding: 5px;
+	}
+}
+
+.react-autosuggest__suggestions-container{
+	background-color: white;
+	overflow: hidden;
+	z-index: 10;
+	position: absolute;
+	cursor: pointer;
+	border: 1px solid black;
+}
+
+.react-autosuggest__suggestions-list{
+	text-align: left;
+}
+
+.btn-filter-autosuggest-delete{
+	background-color: white;
+	border: 1px solid black;
+	border-radius: 5px;
+	margin: 10px;
+	padding: 5px 30px;
+	color: black;
+}
+
+.btn-filter-autosuggest{
+	background-color: black;
+	border: none;
+	border-radius: 5px;
+	margin: 10px;
+	padding: 5px 30px;
+	color: white;
+}

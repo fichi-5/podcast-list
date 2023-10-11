@@ -23,7 +23,12 @@ class App extends Component{
     componentDidMount()
     {
         if (!JSON.parse(localStorage.getItem('total_podcast_info')) || moment().diff(JSON.parse(localStorage.getItem('total_podcast_info')).time, 'days') >= 1) {
-            fetch('https://itunes.apple.com/us/rss/toppodcasts/limit=100/genre=1310/json')
+            fetch('https://itunes.apple.com/us/rss/toppodcasts/limit=100/genre=1310/json',
+                    {method: 'GET',
+                        mode: 'cors',
+                        cache: 'default'
+                        }
+                )
                 .then((response) => response.json())
                 .then(data => {
                     /*console.log("INFO DATA");
@@ -49,7 +54,9 @@ class App extends Component{
                         data: data.feed.entry,
                         time: moment(new Date())
                     }));
-                });
+                })
+                .catch(error => alert(error));
+            ;
         } else {
             this.setState({
                 content: JSON.parse(localStorage.getItem('total_podcast_info')).data

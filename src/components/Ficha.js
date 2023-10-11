@@ -20,7 +20,12 @@ class Ficha extends Component{
 
     async show_modal_info (id) {
         appState.modal_details = {};
-        await fetch("https://itunes.apple.com/lookup?id="+id)
+        await fetch("https://itunes.apple.com/lookup?id="+id,
+            {headers: {
+                    "Access-Control-Allow-Origin": "*"
+                }
+            }
+            )
             .then((response) => response.json())
             .then(data => {
                 if (data !== undefined){
@@ -30,7 +35,9 @@ class Ficha extends Component{
                 } else {
                     alert("No ha sido posible cargar la información");
                 }
-            });
+            })
+            .catch(error => alert(error));
+        ;
     };
 
     showModal = (id, data) => {
